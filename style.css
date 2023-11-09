@@ -4,6 +4,9 @@
     --primary-text-color: #FFFFFF;
     --secondary-text-color: #3d3d3d;
     --tertairy-text-color: #a2a2a2;
+    
+    --primary-background-color: #3d3d3d;
+    --secondary-background-color: #2f2f2f;
 }
 
 * {
@@ -12,6 +15,12 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    
+    /* Add a smooth scrolling effect for the navigation
+    and add a top-padding, otherwise the top of the element
+    the navigation is scrolling to would be off-screen */
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 h1 {
@@ -29,13 +38,12 @@ h2 {
 
 p, a {
     font-size: small;
-    font-weight: 500;
+    font-weight: 400;
 }
 
-/*INTRO*/
 .intro {
     text-align: center;
-    margin: 15px 0 20px 0;
+    margin: 15px 0 25px 0;
 }
 
 .intro :first-child {
@@ -47,11 +55,14 @@ p, a {
     font-size: small;
 }
 
-/*NAVIGATION*/
 .nav {
+    top: 0;
+    position: sticky;
+    overflow: hidden;
     text-align: center;
-    padding-bottom: 5px;
+    padding: 0 0 0 5px;
     margin-bottom: 5px;
+    background: var(--primary-text-color);
     border-bottom: 2px solid var(--tertairy-text-color);
 }
 
@@ -67,30 +78,43 @@ p, a {
 
 .nav a {
     color: var(--tertairy-text-color);
+    font-weight: 500;
 }
 
 .nav li :hover {
     color: var(--secondary-text-color);
 }
 
-/*CONTENT*/
 .content {
-    height: 1000px;
-    background: var(--secondary-text-color);
-    padding: 40px 75px 0 30px;
+    height: auto;
+    background: var(--primary-background-color);
+    padding: 20px 45px 40px 45px;
 }
 
 #art {
     display: flex;
-    flex-direction: row-reverse;
+    margin-top: 40px;
+    padding: 30px 30px 20px 30px;
+    background: var(--secondary-background-color);
 }
 
-#art div {
-    margin: 0 0 0 20px;
+#art #text {
+    margin: 5px 30px 0 30px;
 }
 
-#art :first-child, p {
+/* Using :first-child here, because of design changes.
+This allows the HTML page to use any kind of text tag
+while this CSS file changes the color of the text to white. */
+#art #text :first-child, p {
     color: var(--primary-text-color);
+}
+
+#art #text #explanation {
+    margin-top: 20px;
+}
+
+#art #text #explanation p {
+    color: var(--tertairy-text-color);
 }
 
 #art img {
