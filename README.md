@@ -1,6 +1,6 @@
 # Interweek Museum Website
 For this assignment I went to the Van Abbemuseum in Eindhoven where I had to take pictures of art.
-I chose four pictures and wrote a description for each picture.
+I chose four pictures and wrote a description and my own oppinion on the artwork for each picture.
 Lastly I put the four pictures including description together on a website.
 
 # Preview
